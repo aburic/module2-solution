@@ -20,7 +20,6 @@ ToBuyController.$inject = ['$scope','ShoppingListCheckOffService'];
       vm.alreadyBoughtItems = ShoppingListCheckOffService.getAlreadyBoughtItems();
     }
   function ShoppingListCheckOffService() {
-
     var service = this;
     var already_bought_items = [];
     var buy_items = [{"name":"cookie","quantity":10},
@@ -31,9 +30,7 @@ ToBuyController.$inject = ['$scope','ShoppingListCheckOffService'];
                     ];
     service.moveItemToAlreadyBoughtList = function(index){
       already_bought_items.push(buy_items[index]);
-      console.log(already_bought_items);
       buy_items.splice(index,1);
-      console.log(buy_items);
     };
     service.getBuyItems = function(){
       return buy_items;
